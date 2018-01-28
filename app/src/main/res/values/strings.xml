@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Score Counter</string>
+    <string name="three_points_label">+ 3 Points</string>
+    <string name="two_points_label">+ 2 Points</string>
+    <string name="one_point_label">+ 1 Point</string>
+    <string name="reset_label">Reset Scores</string>
+    <string name="first_quarter_label">Q1</string>
+    <string name="second_quarter_label">Q2</string>
+    <string name="third_quarter_label">Q3</string>
+    <string name="fourth_quarter_label">Q4</string>
+    <string name="overtime_label">OT</string>
+
+    <string-array name="game_quarter_array">
+        <item>@string/first_quarter_label</item>
+        <item>@string/second_quarter_label</item>
+        <item>@string/third_quarter_label</item>
+        <item>@string/fourth_quarter_label</item>
+        <item>@string/overtime_label</item>
+    </string-array>
+
+    <string-array name="team_a_array">
+        <item>(A) Boston Celtics</item>
+        <item>(A) Chicago Bulls</item>
+        <item>(A) Cleveland Cavaliers</item>
+        <item>(A) GS Warriors</item>
+        <item>(A) LA Lakers</item>
+        <item>(A) OKC Thunder</item>
+    </string-array>
+
+    <string-array name="team_b_array">
+        <item>(B) Boston Celtics</item>
+        <item>(B) Chicago Bulls</item>
+        <item>(B) Cleveland Cavaliers</item>
+        <item>(B) GS Warriors</item>
+        <item>(B) LA Lakers</item>
+        <item>(B) OKC Thunder</item>
+    </string-array>
+</resources>
