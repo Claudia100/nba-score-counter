@@ -86,7 +86,7 @@
                     android:id="@+id/text_view_score_team_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="60sp" />
+                    android:textSize="80sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -187,21 +187,21 @@
 
                 <Button
                     android:id="@+id/button_plus_three_points_team_a"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/three_points_label" />
 
                 <Button
                     android:id="@+id/button_plus_two_points_team_a"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/two_points_label" />
 
                 <Button
                     android:id="@+id/button_plus_one_point_team_a"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/one_point_label" />
@@ -231,7 +231,7 @@
                     android:id="@+id/text_view_score_team_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="60sp" />
+                    android:textSize="80sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -332,21 +332,21 @@
 
                 <Button
                     android:id="@+id/button_plus_three_points_team_b"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/three_points_label" />
 
                 <Button
                     android:id="@+id/button_plus_two_points_team_b"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/two_points_label" />
 
                 <Button
                     android:id="@+id/button_plus_one_point_team_b"
-                    android:layout_width="120dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/one_point_label" />
@@ -355,9 +355,9 @@
 
         <Button
             android:id="@+id/button_reset_scores"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear_layout_main_view"
+            android:layout_below="@id/linear_layout_main_view"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:text="@string/reset_label" />
