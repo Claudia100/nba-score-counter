@@ -291,13 +291,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void changeTeamLogo(String item) {
         String sideOfTeam = item.substring(1, 2);
         int imageViewId = 0;
-        int drawableId = 0;
 
         if (sideOfTeam.equalsIgnoreCase("A")) {
             imageViewId = R.id.image_view_team_a;
         } else {
             imageViewId = R.id.image_view_team_b;
         }
+
+        int drawableId = 0;
 
         if (item.indexOf("Celtics") != -1 ? true : false) {
             drawableId = R.drawable.boston_celtics;
@@ -318,6 +319,86 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             image.setImageResource(drawableId);
         } catch (NullPointerException e) {
             Log.e(TAG, e.getMessage());
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState");
+
+        outState.putCharSequence("savedScoreTeamA", tvScoreTeamA.getText());
+        outState.putCharSequence("savedScoreTeamB", tvScoreTeamB.getText());
+
+        outState.putCharSequence("savedFirstQuarterScoreTeamA", tvFirstQuarterScoreTeamA.getText());
+        outState.putCharSequence("savedSecondQuarterScoreTeamA", tvSecondQuarterScoreTeamA.getText());
+        outState.putCharSequence("savedThirdQuarterScoreTeamA", tvThirdQuarterScoreTeamA.getText());
+        outState.putCharSequence("savedFourthQuarterScoreTeamA", tvFourthQuarterScoreTeamA.getText());
+        outState.putCharSequence("savedOvertimeScoreTeamA", tvOvertimeQuarterScoreTeamA.getText());
+
+        outState.putCharSequence("savedFirstQuarterScoreTeamB", tvFirstQuarterScoreTeamB.getText());
+        outState.putCharSequence("savedSecondQuarterScoreTeamB", tvSecondQuarterScoreTeamB.getText());
+        outState.putCharSequence("savedThirdQuarterScoreTeamB", tvThirdQuarterScoreTeamB.getText());
+        outState.putCharSequence("savedFourthQuarterScoreTeamB", tvFourthQuarterScoreTeamB.getText());
+        outState.putCharSequence("savedOvertimeScoreTeamB", tvOvertimeQuarterScoreTeamB.getText());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedState) {
+        super.onRestoreInstanceState(savedState);
+        Log.i(TAG, "onRestoreInstanceState");
+
+        CharSequence currScoreTeamA = savedState.getCharSequence("savedScoreTeamA");
+        CharSequence currScoreTeamB = savedState.getCharSequence("savedScoreTeamB");
+
+        scoreTeamA = Integer.parseInt(currScoreTeamA.toString());
+        scoreTeamB = Integer.parseInt(currScoreTeamB.toString());
+
+        tvScoreTeamA.setText("" + scoreTeamA);
+        tvScoreTeamB.setText("" + scoreTeamB);
+
+        CharSequence currFirstQuarterScoreTeamA = savedState.getCharSequence("savedFirstQuarterScoreTeamA");
+        CharSequence currSecondQuarterScoreTeamA = savedState.getCharSequence("savedSecondQuarterScoreTeamA");
+        CharSequence currThirdQuarterScoreTeamA = savedState.getCharSequence("savedThirdQuarterScoreTeamA");
+        CharSequence currFourthQuarterScoreTeamA = savedState.getCharSequence("savedFourthQuarterScoreTeamA");
+        CharSequence currOvertimeScoreTeamA = savedState.getCharSequence("savedOvertimeScoreTeamA");
+
+        try {
+            firstQuarterScoreTeamA = Integer.parseInt(currFirstQuarterScoreTeamA.toString());
+            secondQuarterScoreTeamA = Integer.parseInt(currSecondQuarterScoreTeamA.toString());
+            thirdQuarterScoreTeamA = Integer.parseInt(currThirdQuarterScoreTeamA.toString());
+            fourthQuarterScoreTeamA = Integer.parseInt(currFourthQuarterScoreTeamA.toString());
+            overtimeScoreTeamA = Integer.parseInt(currOvertimeScoreTeamA.toString());
+
+            tvFirstQuarterScoreTeamA.setText("" + firstQuarterScoreTeamA);
+            tvSecondQuarterScoreTeamA.setText("" + secondQuarterScoreTeamA);
+            tvThirdQuarterScoreTeamA.setText("" + thirdQuarterScoreTeamA);
+            tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
+            tvOvertimeQuarterScoreTeamA.setText("" + overtimeScoreTeamA);
+        } catch (NumberFormatException e) {
+            Log.d(TAG, e.getMessage());
+        }
+
+        CharSequence currFirstQuarterScoreTeamB = savedState.getCharSequence("savedFirstQuarterScoreTeamB");
+        CharSequence currSecondQuarterScoreTeamB = savedState.getCharSequence("savedSecondQuarterScoreTeamB");
+        CharSequence currThirdQuarterScoreTeamB = savedState.getCharSequence("savedThirdQuarterScoreTeamB");
+        CharSequence currFourthQuarterScoreTeamB = savedState.getCharSequence("savedFourthQuarterScoreTeamB");
+        CharSequence currOvertimeScoreTeamB = savedState.getCharSequence("savedOvertimeScoreTeamB");
+
+        try {
+            firstQuarterScoreTeamB = Integer.parseInt(currFirstQuarterScoreTeamB.toString());
+            secondQuarterScoreTeamB = Integer.parseInt(currSecondQuarterScoreTeamB.toString());
+            thirdQuarterScoreTeamB = Integer.parseInt(currThirdQuarterScoreTeamB.toString());
+            fourthQuarterScoreTeamB = Integer.parseInt(currFourthQuarterScoreTeamB.toString());
+            overtimeScoreTeamB = Integer.parseInt(currOvertimeScoreTeamB.toString());
+
+            tvFirstQuarterScoreTeamB.setText("" + firstQuarterScoreTeamB);
+            tvSecondQuarterScoreTeamB.setText("" + secondQuarterScoreTeamB);
+            tvThirdQuarterScoreTeamB.setText("" + thirdQuarterScoreTeamB);
+            tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
+            tvOvertimeQuarterScoreTeamB.setText("" + overtimeScoreTeamB);
+        } catch (NumberFormatException e) {
+            Log.d(TAG, e.getMessage());
         }
     }
 }
