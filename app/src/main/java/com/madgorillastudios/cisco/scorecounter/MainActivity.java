@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String TAG = MainActivity.class.getName();
+    private static final int THREE_POINTS = 3;
+    private static final int TWO_POINTS = 2;
+    private static final int ONE_POINT = 1;
 
     private int scoreTeamA = 0;
     private int scoreTeamB = 0;
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate");
+
         setContentView(R.layout.activity_main);
 
         Toolbar custom_toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -113,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusThreePointsTeamA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamA(3);
+                incrementScoreTeamA(THREE_POINTS);
             }
         });
 
@@ -121,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusTwoPointsTeamA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamA(2);
+                incrementScoreTeamA(TWO_POINTS);
             }
         });
 
@@ -129,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusOnePointTeamA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamA(1);
+                incrementScoreTeamA(ONE_POINT);
             }
         });
 
@@ -137,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusThreePointsTeamB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamB(3);
+                incrementScoreTeamB(THREE_POINTS);
             }
         });
 
@@ -145,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusTwoPointsTeamB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamB(2);
+                incrementScoreTeamB(TWO_POINTS);
             }
         });
 
@@ -153,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnPlusOnePointTeamB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incrementScoreTeamB(1);
+                incrementScoreTeamB(ONE_POINT);
             }
         });
 
@@ -402,4 +407,3 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 }
-
