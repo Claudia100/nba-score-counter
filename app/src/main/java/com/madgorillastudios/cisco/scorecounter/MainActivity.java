@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String TAG = MainActivity.class.getName();
@@ -44,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private TextView tvSecondQuarterScoreTeamA;
     private TextView tvThirdQuarterScoreTeamA;
     private TextView tvFourthQuarterScoreTeamA;
-    private TextView tvOvertimeQuarterScoreTeamA;
+    private TextView tvOvertimeScoreTeamA;
     private TextView tvFirstQuarterScoreTeamB;
     private TextView tvSecondQuarterScoreTeamB;
     private TextView tvThirdQuarterScoreTeamB;
     private TextView tvFourthQuarterScoreTeamB;
-    private TextView tvOvertimeQuarterScoreTeamB;
+    private TextView tvOvertimeScoreTeamB;
 
     private Spinner spinnerGameQuarter;
     private ArrayAdapter<CharSequence> adapterGameQuarter;
@@ -106,13 +105,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tvSecondQuarterScoreTeamA = (TextView) findViewById(R.id.text_view_second_quarter_score_team_a);
         tvThirdQuarterScoreTeamA = (TextView) findViewById(R.id.text_view_third_quarter_score_team_a);
         tvFourthQuarterScoreTeamA = (TextView) findViewById(R.id.text_view_fourth_quarter_score_team_a);
-        tvOvertimeQuarterScoreTeamA = (TextView) findViewById(R.id.text_view_overtime_score_team_a);
+        tvOvertimeScoreTeamA = (TextView) findViewById(R.id.text_view_overtime_score_team_a);
+
+        tvFirstQuarterScoreTeamA.setText("" + firstQuarterScoreTeamA);
+        tvSecondQuarterScoreTeamA.setText("" + secondQuarterScoreTeamA);
+        tvThirdQuarterScoreTeamA.setText("" + thirdQuarterScoreTeamA);
+        tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
+        tvOvertimeScoreTeamA.setText("" + overtimeScoreTeamA);
 
         tvFirstQuarterScoreTeamB = (TextView) findViewById(R.id.text_view_first_quarter_score_team_b);
         tvSecondQuarterScoreTeamB = (TextView) findViewById(R.id.text_view_second_quarter_score_team_b);
         tvThirdQuarterScoreTeamB = (TextView) findViewById(R.id.text_view_third_quarter_score_team_b);
         tvFourthQuarterScoreTeamB = (TextView) findViewById(R.id.text_view_fourth_quarter_score_team_b);
-        tvOvertimeQuarterScoreTeamB = (TextView) findViewById(R.id.text_view_overtime_score_team_b);
+        tvOvertimeScoreTeamB = (TextView) findViewById(R.id.text_view_overtime_score_team_b);
+
+        tvFirstQuarterScoreTeamB.setText("" + firstQuarterScoreTeamB);
+        tvSecondQuarterScoreTeamB.setText("" + secondQuarterScoreTeamB);
+        tvThirdQuarterScoreTeamB.setText("" + thirdQuarterScoreTeamB);
+        tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
+        tvOvertimeScoreTeamB.setText("" + overtimeScoreTeamB);
 
         Button btnPlusThreePointsTeamA = (Button) findViewById(R.id.button_plus_three_points_team_a);
         btnPlusThreePointsTeamA.setOnClickListener(new View.OnClickListener() {
@@ -198,11 +209,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         fourthQuarterScoreTeamA = 0;
         overtimeScoreTeamA = 0;
 
-        tvFirstQuarterScoreTeamA.setText("");
-        tvSecondQuarterScoreTeamA.setText("");
-        tvThirdQuarterScoreTeamA.setText("");
-        tvFourthQuarterScoreTeamA.setText("");
-        tvOvertimeQuarterScoreTeamA.setText("");
+        tvFirstQuarterScoreTeamA.setText("" + firstQuarterScoreTeamA);
+        tvSecondQuarterScoreTeamA.setText("" + secondQuarterScoreTeamA);
+        tvThirdQuarterScoreTeamA.setText("" + thirdQuarterScoreTeamA);
+        tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
+        tvOvertimeScoreTeamA.setText("" + overtimeScoreTeamA);
 
         firstQuarterScoreTeamB = 0;
         secondQuarterScoreTeamB = 0;
@@ -210,11 +221,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         fourthQuarterScoreTeamB = 0;
         overtimeScoreTeamB = 0;
 
-        tvFirstQuarterScoreTeamB.setText("");
-        tvSecondQuarterScoreTeamB.setText("");
-        tvThirdQuarterScoreTeamB.setText("");
-        tvFourthQuarterScoreTeamB.setText("");
-        tvOvertimeQuarterScoreTeamB.setText("");
+        tvFirstQuarterScoreTeamB.setText("" + firstQuarterScoreTeamB);
+        tvSecondQuarterScoreTeamB.setText("" + secondQuarterScoreTeamB);
+        tvThirdQuarterScoreTeamB.setText("" + thirdQuarterScoreTeamB);
+        tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
+        tvOvertimeScoreTeamB.setText("" + overtimeScoreTeamB);
 
         spinnerGameQuarter.setSelection(adapterGameQuarter.getPosition(getString(R.string.first_quarter_label)));
     }
@@ -234,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
         } else if (isOvertimeSelected) {
             overtimeScoreTeamA += score;
-            tvOvertimeQuarterScoreTeamA.setText("" + overtimeScoreTeamA);
+            tvOvertimeScoreTeamA.setText("" + overtimeScoreTeamA);
         }
     }
 
@@ -253,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
         } else if (isOvertimeSelected) {
             overtimeScoreTeamB += score;
-            tvOvertimeQuarterScoreTeamB.setText("" + overtimeScoreTeamB);
+            tvOvertimeScoreTeamB.setText("" + overtimeScoreTeamB);
         }
     }
 
@@ -339,13 +350,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         outState.putCharSequence("savedSecondQuarterScoreTeamA", tvSecondQuarterScoreTeamA.getText());
         outState.putCharSequence("savedThirdQuarterScoreTeamA", tvThirdQuarterScoreTeamA.getText());
         outState.putCharSequence("savedFourthQuarterScoreTeamA", tvFourthQuarterScoreTeamA.getText());
-        outState.putCharSequence("savedOvertimeScoreTeamA", tvOvertimeQuarterScoreTeamA.getText());
+        outState.putCharSequence("savedOvertimeScoreTeamA", tvOvertimeScoreTeamA.getText());
 
         outState.putCharSequence("savedFirstQuarterScoreTeamB", tvFirstQuarterScoreTeamB.getText());
         outState.putCharSequence("savedSecondQuarterScoreTeamB", tvSecondQuarterScoreTeamB.getText());
         outState.putCharSequence("savedThirdQuarterScoreTeamB", tvThirdQuarterScoreTeamB.getText());
         outState.putCharSequence("savedFourthQuarterScoreTeamB", tvFourthQuarterScoreTeamB.getText());
-        outState.putCharSequence("savedOvertimeScoreTeamB", tvOvertimeQuarterScoreTeamB.getText());
+        outState.putCharSequence("savedOvertimeScoreTeamB", tvOvertimeScoreTeamB.getText());
     }
 
     @Override
@@ -368,21 +379,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         CharSequence currFourthQuarterScoreTeamA = savedState.getCharSequence("savedFourthQuarterScoreTeamA");
         CharSequence currOvertimeScoreTeamA = savedState.getCharSequence("savedOvertimeScoreTeamA");
 
-        try {
-            firstQuarterScoreTeamA = Integer.parseInt(currFirstQuarterScoreTeamA.toString());
-            secondQuarterScoreTeamA = Integer.parseInt(currSecondQuarterScoreTeamA.toString());
-            thirdQuarterScoreTeamA = Integer.parseInt(currThirdQuarterScoreTeamA.toString());
-            fourthQuarterScoreTeamA = Integer.parseInt(currFourthQuarterScoreTeamA.toString());
-            overtimeScoreTeamA = Integer.parseInt(currOvertimeScoreTeamA.toString());
+        firstQuarterScoreTeamA = Integer.parseInt(currFirstQuarterScoreTeamA.toString());
+        secondQuarterScoreTeamA = Integer.parseInt(currSecondQuarterScoreTeamA.toString());
+        thirdQuarterScoreTeamA = Integer.parseInt(currThirdQuarterScoreTeamA.toString());
+        fourthQuarterScoreTeamA = Integer.parseInt(currFourthQuarterScoreTeamA.toString());
+        overtimeScoreTeamA = Integer.parseInt(currOvertimeScoreTeamA.toString());
 
-            tvFirstQuarterScoreTeamA.setText("" + firstQuarterScoreTeamA);
-            tvSecondQuarterScoreTeamA.setText("" + secondQuarterScoreTeamA);
-            tvThirdQuarterScoreTeamA.setText("" + thirdQuarterScoreTeamA);
-            tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
-            tvOvertimeQuarterScoreTeamA.setText("" + overtimeScoreTeamA);
-        } catch (NumberFormatException e) {
-            Log.d(TAG, e.getMessage());
-        }
+        tvFirstQuarterScoreTeamA.setText("" + firstQuarterScoreTeamA);
+        tvSecondQuarterScoreTeamA.setText("" + secondQuarterScoreTeamA);
+        tvThirdQuarterScoreTeamA.setText("" + thirdQuarterScoreTeamA);
+        tvFourthQuarterScoreTeamA.setText("" + fourthQuarterScoreTeamA);
+        tvOvertimeScoreTeamA.setText("" + overtimeScoreTeamA);
 
         CharSequence currFirstQuarterScoreTeamB = savedState.getCharSequence("savedFirstQuarterScoreTeamB");
         CharSequence currSecondQuarterScoreTeamB = savedState.getCharSequence("savedSecondQuarterScoreTeamB");
@@ -390,20 +397,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         CharSequence currFourthQuarterScoreTeamB = savedState.getCharSequence("savedFourthQuarterScoreTeamB");
         CharSequence currOvertimeScoreTeamB = savedState.getCharSequence("savedOvertimeScoreTeamB");
 
-        try {
-            firstQuarterScoreTeamB = Integer.parseInt(currFirstQuarterScoreTeamB.toString());
-            secondQuarterScoreTeamB = Integer.parseInt(currSecondQuarterScoreTeamB.toString());
-            thirdQuarterScoreTeamB = Integer.parseInt(currThirdQuarterScoreTeamB.toString());
-            fourthQuarterScoreTeamB = Integer.parseInt(currFourthQuarterScoreTeamB.toString());
-            overtimeScoreTeamB = Integer.parseInt(currOvertimeScoreTeamB.toString());
+        firstQuarterScoreTeamB = Integer.parseInt(currFirstQuarterScoreTeamB.toString());
+        secondQuarterScoreTeamB = Integer.parseInt(currSecondQuarterScoreTeamB.toString());
+        thirdQuarterScoreTeamB = Integer.parseInt(currThirdQuarterScoreTeamB.toString());
+        fourthQuarterScoreTeamB = Integer.parseInt(currFourthQuarterScoreTeamB.toString());
+        overtimeScoreTeamB = Integer.parseInt(currOvertimeScoreTeamB.toString());
 
-            tvFirstQuarterScoreTeamB.setText("" + firstQuarterScoreTeamB);
-            tvSecondQuarterScoreTeamB.setText("" + secondQuarterScoreTeamB);
-            tvThirdQuarterScoreTeamB.setText("" + thirdQuarterScoreTeamB);
-            tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
-            tvOvertimeQuarterScoreTeamB.setText("" + overtimeScoreTeamB);
-        } catch (NumberFormatException e) {
-            Log.d(TAG, e.getMessage());
-        }
+        tvFirstQuarterScoreTeamB.setText("" + firstQuarterScoreTeamB);
+        tvSecondQuarterScoreTeamB.setText("" + secondQuarterScoreTeamB);
+        tvThirdQuarterScoreTeamB.setText("" + thirdQuarterScoreTeamB);
+        tvFourthQuarterScoreTeamB.setText("" + fourthQuarterScoreTeamB);
+        tvOvertimeScoreTeamB.setText("" + overtimeScoreTeamB);
     }
 }
